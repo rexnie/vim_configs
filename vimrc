@@ -128,12 +128,47 @@ nnoremap <leader>tl : Tlist<CR> ",tl呼出taglist
 
 " WinManager {{
 " 窗口管理器
-let g:winManagerWindowLayout='FileExplorer|TagList|NerdTree'
+let g:winManagerWindowLayout='FileExplorer|TagList'
 nmap wm :WMToggle<cr>
 " }}
 
-"
-set cscopequickfix=s-,c-,d-,i-,t-,e-
+" cscope config {{
+" cd src_dir; cscope -Rbq 生成cscope数据库
+set cscopequickfix=s-,c-,d-,i-,t-,e- "设定是否使用 quickfix 窗口来显示 cscope 结果
+" }}
+
+" netrw {{
+" 文件管理器插件
+let g:netrw_winsize = 30
+nmap <silent> <leader>fe :Sexplore!<cr>
+" }}
+
+" bufExplorer {{
+" buffer 管理插件
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+let g:bufExplorerSortBy='mru'        " Sort by most recently used.
+let g:bufExplorerSplitRight=0        " Split left.
+let g:bufExplorerSplitVertical=1     " Split vertically.
+let g:bufExplorerSplitVertSize = 30  " Split width
+let g:bufExplorerUseCurrentWindow=1  " Open in new window.
+autocmd BufWinEnter \[Buf\ List\] setl nonumber
+" }}
+
+" A {{
+" A 切换 .c <--> .h
+" :A 在当前buffer切换.c/.h
+" :AS 新建一个水平窗口来放.c/.h
+" :AV 新建一个垂直窗口来放.c/.h
+" :AT 新建一个tab来放.c/.h
+nnoremap <silent> <F12> :A<CR>
+" }}
+
+" grep {{
+nnoremap <silent> <F3> :Grep<CR>
+let Grep_Skip_Dirs = '.svn .git'
+let Grep_Skip_Files = '*.bak *~ *.o *.map *.out'
+" }}
 
 " command-t
 " nnoremap <silent> <F7> :CommandT<CR>
