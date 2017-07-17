@@ -170,6 +170,61 @@ let Grep_Skip_Dirs = '.svn .git'
 let Grep_Skip_Files = '*.bak *~ *.o *.map *.out'
 " }}
 
+" compl-omni-filetypes {{
+" vim 补全方式汇总
+" 全能补全			  CTRL-X CTRL-O
+" 整行补全                        CTRL-X CTRL-L
+" 根据当前文件里关键字补全        CTRL-X CTRL-N
+" 根据字典补全                    CTRL-X CTRL-K
+" 根据同义词字典补全              CTRL-X CTRL-T
+" 根据头文件内关键字补全          CTRL-X CTRL-I
+" 根据标签补全                    CTRL-X CTRL-]
+" 补全文件名                      CTRL-X CTRL-F
+" 补全宏定义                      CTRL-X CTRL-D
+" 补全vim命令                     CTRL-X CTRL-V
+" 用户自定义补全方式              CTRL-X CTRL-U
+" 拼写建议                        CTRL-X CTRL-S 
+"
+" 在当前缓冲区、其它缓冲区，以及当前文件所包含的头文件中查找以光标前关键字开始的单词
+" 向上查找			  CTRL-X CTRL-P
+" 向下查找			  CTRL-X CTRL-N
+"
+"
+" 当补全处于激活状态时
+" 可以用”CTRL-E“停止补全并回到原来录入的文字
+" 可以用”CTRL-Y“可以停止补全，并接受当前所选的项目
+" }}
+
+" OmniCppComplete {{
+filetype plugin indent on 
+
+" 在下拉菜单中显示匹配项目,不显示预览窗口
+" 并且会自动插入所有匹配项目的相同文本
+set completeopt=longest,menu 
+
+"如果下拉菜单弹出，回车映射为接受当前所选项目，否则，仍映射为回车；
+inoremap <expr> <CR>  pumvisible()?"\<C-Y>":"\<CR>"
+
+"如果下拉菜单弹出，CTRL-J映射为在下拉菜单中向下翻页。否则映射为CTRL-X CTRL-O；
+inoremap <expr> <C-J> pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
+
+"如果下拉菜单弹出，CTRL-K映射为在下拉菜单中向上翻页，否则仍映射为CTRL-K；
+inoremap <expr> <C-K> pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
+
+"如果下拉菜单弹出，CTRL-U映射为CTRL-E，即停止补全，否则，仍映射为CTRL-U；
+inoremap <expr> <C-U> pumvisible()?"\<C-E>":"\<C-U>" 
+" }}
+
+" SuperTab {{
+" 补全方式:
+" 0 : 不记录上次的补全方式
+" 1 : 记住你上次的补全方式，直到使用其它的补全命令改变它
+" 2 : 记住上次的补全方式，直到按ESC退出插入模式为止
+let g:SuperTabRetainCompletionType = 2
+" 设置缺省的补全方式，默认为CTRL-P
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+" }}
+
 " command-t
 " nnoremap <silent> <F7> :CommandT<CR>
 
