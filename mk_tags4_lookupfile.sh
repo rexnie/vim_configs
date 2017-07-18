@@ -14,7 +14,7 @@ find . -path "./Documentation" -prune -o \
     -path "./arch/alpha" -prune -o \
     -not -regex '.*\.\(o\|a\|s\|so\|ko\|i\|lst\|symtypes\|order\|elf\|bin\|gz\|bz2\|lzma\|patch\|xz\|lzo\|Image\|img\|map\|markers\|symvers\|gitignore\|mailmap\|orig\|bak\|cmd\)' \
     -type f -printf "%f\t%p\t1\n" | \
-    sort -f >> filenametags 
+    sort -f >> filenametags
 
 
 # find 语句示例
