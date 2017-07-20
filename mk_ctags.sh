@@ -61,6 +61,9 @@ function process_ex_dir()
 
 function generate_result()
 {
+    if [ ! -f $fn ];then
+        return
+    fi
     while read eachline
     do
         if [ $eachline ];then
@@ -77,7 +80,7 @@ function generate_result()
 
 # execute from here
 if [ -f $fn ];then
-    rm $fn
+    rm -rf $fn
     echo "remove $fn"
 fi
 
