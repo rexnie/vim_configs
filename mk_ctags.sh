@@ -1,5 +1,9 @@
 #!/bin/bash
-#changlist
+#this tool will create a tag file for ctag command
+#with exclude file/diretory,which u can config it
+#the basic idea is: ctag -R --exclude=xxxx
+
+#changlist:
 #1. add regular expression(use 'ls -d dirname') for exclude file/dir
 
 fn="_exclude_tmp_file"
@@ -99,4 +103,4 @@ fi
 ctags -R $ex_options --c++-kinds=+p --fields=+iaS --extra=+q *
 ls -lh tags
 
-#rm $fn
+rm $fn
