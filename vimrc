@@ -4,7 +4,7 @@ let cfg_expandtab= 0
 set nocompatible "不兼容vi
 set number "显示行号
 "syntax on "语法高亮支持
-"syntax enable
+syntax enable
 if cfg_expandtab
     set tabstop=4 "一个tab键所占的列数,默认为8
     set shiftwidth=4 "reindent操作(<<和>>)时缩进的列数(这里的一列相当于一个空格),默认为8
@@ -42,6 +42,7 @@ set noignorecase "查找时大小匹配
 set laststatus=2 "总是显示状态行
 set backspace=2 "插入模式时，退格键可删除任意字符，
 		"0/1 只可删除刚刚输入的字符 
+set statusline=%F%-10m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 " }}
 
 " tabpages config {{
