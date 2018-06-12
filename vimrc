@@ -23,6 +23,7 @@ endif
 set showmatch "当键入括号时，光标会跳转到匹配的括号处闪烁下，然后跳回来，起提示作用
 set incsearch "开启边输入边匹配
 set guifont=Monaco:h14 "给gui版的vim设置字体
+colorscheme molokai
 set smartindent "当输入newlines时根据C-like语法智能缩进
 set cindent "起用C缩进，当设置了这个，smartindent失效
 set autoindent "采用上一行的缩进
