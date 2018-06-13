@@ -3,7 +3,7 @@ let cfg_expandtab= 0
 " common config {{
 set nocompatible "不兼容vi
 set number "显示行号
-"syntax on "语法高亮支持
+syntax on "语法高亮支持
 syntax enable
 if cfg_expandtab
     set tabstop=4 "一个tab键所占的列数,默认为8
@@ -23,13 +23,13 @@ endif
 set showmatch "当键入括号时，光标会跳转到匹配的括号处闪烁下，然后跳回来，起提示作用
 set incsearch "开启边输入边匹配
 set guifont=Monaco:h14 "给gui版的vim设置字体
-colorscheme molokai
+colorscheme wombat256mod "desert 加载配色方案,保存在$VIMRUNTIME/colors/:echo $VIMRUNTIME 查看该值
+"colorscheme molokai
 set smartindent "当输入newlines时根据C-like语法智能缩进
 set cindent "起用C缩进，当设置了这个，smartindent失效
 set autoindent "采用上一行的缩进
 set hlsearch "高亮显示查找的内容
 set cursorline "为光标所在行加下划线
-"colorscheme desert "加载配色方案,保存在$VIMRUNTIME/colors/desert.vim,:echo $VIMRUNTIME 查看该值
 set cmdheight=1 "给command mode设置行数
 "set fileencodings=uft-8,gbk "使用utf-8或gbk打开文件
 
