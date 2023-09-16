@@ -1,5 +1,7 @@
 #!/bin/bash
-# generate tag file for lookupfile plugin
+# generate tag file for lookupfile plugin, usage
+# cd YOUR_PROJ_DIR
+# ./mk_tags4_lookupfile.sh
 
 # 用来生成filenametags文件中的”!_TAG_FILE_SORTED”行,
 # 表明此tag文件是经过排序的
